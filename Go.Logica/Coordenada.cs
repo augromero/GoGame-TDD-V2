@@ -2,15 +2,22 @@
 
 namespace Go.Logica
 {
-    public class Coordenada
+    public class Coordenada : ICoordenada
     {
         const int unicodeAntesDeLetraA = 64;
-        public string ObtenerLiteral(int x, int y)
+        public string ObtenerLiteral(int dimension, int x, int y)
         {
             int unicodeCoordenadaX = unicodeAntesDeLetraA + x;
             string literalCoordenadaX = ((char)unicodeCoordenadaX).ToString();
 
-            return literalCoordenadaX + y;
+            return dimension + literalCoordenadaX + y;
+        }
+
+        public string ObtenerLiteralPuntoDerecha(int dimension, int x, int y)
+        {
+            string puntoDerecha = ObtenerLiteral(dimension, x + 1, y);
+
+            return puntoDerecha;
         }
     }
 }
