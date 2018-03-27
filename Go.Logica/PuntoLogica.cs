@@ -17,7 +17,6 @@ namespace Go.Logica
         public Punto CrearPunto(int dimension, int x, int y)
         {
             string coordenada = _coordenada.ObtenerLiteral(dimension, x, y);
-            string puntoDerecha = _coordenada.ObtenerLiteralPuntoDerecha(dimension, x, y);
 
             Punto punto = new Punto
             {
@@ -25,7 +24,10 @@ namespace Go.Logica
                 DimensionTablero = dimension,
                 X = x,
                 Y = y,
-                IdPuntoDerecha = puntoDerecha
+                IdPuntoDerecha = _coordenada.ObtenerLiteralPuntoDerecha(dimension, x, y),
+                IdPuntoIzquierda = _coordenada.ObtenerLiteralPuntoIzquierda(dimension, x, y),
+                IdPuntoArriba = _coordenada.ObtenerLiteralPuntoArriba(dimension, x, y),
+                IdPuntoAbajo = _coordenada.ObtenerLiteralPuntoAbajo(dimension, x, y)
             };
 
             return punto;

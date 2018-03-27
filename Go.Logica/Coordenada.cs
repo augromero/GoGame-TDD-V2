@@ -15,9 +15,42 @@ namespace Go.Logica
 
         public string ObtenerLiteralPuntoDerecha(int dimension, int x, int y)
         {
+            if (x == dimension)
+                return null;
+
             string puntoDerecha = ObtenerLiteral(dimension, x + 1, y);
 
             return puntoDerecha;
+        }
+
+        public string ObtenerLiteralPuntoIzquierda(int dimension, int x, int y)
+        {
+            if (x == 1)
+                return null;
+
+            string puntoIzquierda = ObtenerLiteral(dimension, x - 1, y);
+
+            return puntoIzquierda;
+        }
+
+        public string ObtenerLiteralPuntoArriba(int dimension, int x, int y)
+        {
+            if (y == dimension)
+                return null;
+
+            string puntoArriba = ObtenerLiteral(dimension, x, y + 1);
+
+            return puntoArriba;
+        }
+
+        public string ObtenerLiteralPuntoAbajo(int dimension, int x, int y)
+        {
+            if (y == 1)
+                return null;
+
+            string puntoAbajo = ObtenerLiteral(dimension, x, y - 1);
+
+            return puntoAbajo;
         }
     }
 }
