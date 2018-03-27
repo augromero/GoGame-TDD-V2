@@ -6,6 +6,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Go.Entidades\Go.Entidades.csproj" />
+    
   </ItemGroup>
 
 </Project>
