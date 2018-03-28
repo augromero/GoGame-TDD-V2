@@ -10,6 +10,8 @@ using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
 using Go.Repositorio;
 using Microsoft.EntityFrameworkCore;
+using Go.Logica.Interfaces;
+using Go.Logica;
 
 namespace Go.API
 {
@@ -28,8 +30,11 @@ namespace Go.API
             services.AddDbContext<CoreContext>(options =>
             options.UseSqlite(Configuration.GetConnectionString("DefaultConnection")));
 
-
             services.AddMvc();
+
+            services.AddScoped<IPuntoRepositorio, PuntoRepositorio>();
+            services.AddScoped<IPuntoLogica, PuntoLogica>();
+            services.AddScoped<ITablero, Tablero>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

@@ -5,7 +5,7 @@ using Go.Entidades;
 
 namespace Go.Logica
 {
-    public class PuntoLogica
+    public class PuntoLogica : IPuntoLogica
     {
         private ICoordenada _coordenada;
 
