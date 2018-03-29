@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Go.Entidades;
 using Go.Logica;
 using Microsoft.AspNetCore.Mvc;
 
@@ -9,7 +10,6 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace Go.API.Controllers
 {
-    [Route("api/[controller]")]
     public class TableroController : Controller
     {
         private ITablero _tablero;
@@ -21,6 +21,7 @@ namespace Go.API.Controllers
 
         // GET: api/<controller>
         [HttpGet]
+        [Route("api/Tablero")]
         public IEnumerable<string> Get()
         {
             return new string[] { "value1", "value2" };
@@ -33,9 +34,12 @@ namespace Go.API.Controllers
             return "value";
         }
 
-        public Task<OkObjectResult> ObtenerTablero(object dimension)
+        [HttpGet]
+        [Route("api/Tableros/{dimension}")]
+        public async Task<IActionResult> ObtenerTableroAsync(int dimension)
         {
-            throw new NotImplementedException();
+            List<Punto> puntosRetornados = await _tablero.ObtenerTableroAsync(dimension);
+            return Ok(puntosRetornados);
         }
 
         // POST api/<controller>

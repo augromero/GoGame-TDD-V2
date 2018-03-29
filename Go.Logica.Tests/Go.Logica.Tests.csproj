@@ -18,6 +18,7 @@
     <ProjectReference Include="..\Go.API\Go.API.csproj" />
     <ProjectReference Include="..\Go.Logica\Go.Logica.csproj" />
     <ProjectReference Include="..\Go.Repositorio\Go.Repositorio.csproj" />
+    <ProjectReference Include="..\Tests.Extensiones\Tests.Extensiones.csproj" />
   </ItemGroup>
 
 </Project>

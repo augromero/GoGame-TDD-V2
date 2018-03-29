@@ -1,6 +1,7 @@
 using Microsoft.EntityFrameworkCore;
 using System.Collections.Generic;
 using Go.Entidades;
+using Microsoft.EntityFrameworkCore.Storage;
 
 namespace Go.Repositorio
 {
@@ -15,7 +16,10 @@ namespace Go.Repositorio
 
         protected override void OnModelCreating(ModelBuilder builder)
         {
-            base.OnModelCreating(builder);
+            //base.OnModelCreating(builder);
+
+            builder.Entity<Punto>().ToTable("Puntos");
+
         }
     }
 }

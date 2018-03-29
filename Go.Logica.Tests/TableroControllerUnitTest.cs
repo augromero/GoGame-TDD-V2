@@ -5,6 +5,7 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Moq;
 using System.Collections.Generic;
 using System.Threading.Tasks;
+using Tests.Extensiones;
 
 namespace Go.Logica.Tests
 {
@@ -24,15 +25,20 @@ namespace Go.Logica.Tests
         [TestMethod]
         public async Task CuandoIngresaDimensionTableroRetornaPuntosDelTablero()
         {
-            List<Punto> puntosEsperados = new List<Punto>();
+            List<Punto> puntosEsperados = new List<Punto>() { new Punto { Id ="3A1"}, new Punto { Id = "3A2"} };
 
             int dimension = 3;
 
-           // _tablero.Setup(metodo => metodo.)
+            _tablero.Setup(metodo => metodo.ObtenerTableroAsync(It.IsNotNull<int>()))
+                .Returns(async () => {
+                    await Task.Yield();
+                    return puntosEsperados;
+                });
 
-            OkObjectResult puntosTablero = await _tableroController.ObtenerTablero(dimension);
+            OkObjectResult resultado = await _tableroController.ObtenerTableroAsync(dimension) as OkObjectResult;
+            
 
-            Assert.IsInstanceOfType(puntosTablero.Value.GetType(), typeof(List<Punto>));
+            Assert.IsTrue(puntosEsperados.ListasIguales((List<Punto>)resultado.Value));
         }
     }
 }
