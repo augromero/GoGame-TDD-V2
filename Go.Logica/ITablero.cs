@@ -6,7 +6,8 @@ namespace Go.Logica
 {
     public interface ITablero
     {
-        Task CrearTableroAsync(int dimension);
+        Task CrearPuntosTableroAsync(int dimension);
         Task<List<Punto>> ObtenerTableroAsync(int dimension);
+        Task<bool> ExisteTableroAsync(int dimension);
     }
 }

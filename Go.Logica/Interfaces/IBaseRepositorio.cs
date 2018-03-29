@@ -14,6 +14,8 @@ namespace Go.Logica.Interfaces
 
         Task AgregarAsync(TEntity entidad);
 
+        Task AgregarListaAsync(List<TEntity> entidades);
+
         Task ActualizarAsync(int id, TEntity entidad);
 
         Task EliminarPorIdAsync<TypeId>(TypeId id);

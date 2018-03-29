@@ -1,5 +1,6 @@
 ﻿using Go.API.Controllers;
 using Go.Entidades;
+using Go.Logica;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Moq;
@@ -7,7 +8,7 @@ using System.Collections.Generic;
 using System.Threading.Tasks;
 using Tests.Extensiones;
 
-namespace Go.Logica.Tests
+namespace Go.Controllers.Tests
 {
     [TestClass]
     public class TableroControllerUnitTest
@@ -23,7 +24,7 @@ namespace Go.Logica.Tests
         }
 
         [TestMethod]
-        public async Task CuandoIngresaDimensionTableroRetornaPuntosDelTablero()
+        public async Task CuandoIngresaDimensionExistenteDeTableroRetornaPuntosDelTablero()
         {
             List<Punto> puntosEsperados = new List<Punto>() { new Punto { Id ="3A1"}, new Punto { Id = "3A2"} };
 
@@ -40,5 +41,7 @@ namespace Go.Logica.Tests
 
             Assert.IsTrue(puntosEsperados.ListasIguales((List<Punto>)resultado.Value));
         }
+
+
     }
 }

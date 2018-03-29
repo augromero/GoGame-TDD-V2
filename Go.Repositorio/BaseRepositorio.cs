@@ -30,6 +30,15 @@ namespace Go.Repositorio
             await _contexto.SaveChangesAsync();
         }
 
+        public async Task AgregarListaAsync(List<TEntity> entidades)
+        {
+            foreach (TEntity entidad in entidades)
+            {
+                await _contexto.Set<TEntity>().AddAsync(entidad);
+            }
+            await _contexto.SaveChangesAsync();
+        }
+
 
         public async Task EliminarPorIdAsync<TypeId>(TypeId id)
         {
