@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Go.Logica.Interfaces
+namespace Go.Logica.RepoInterfaces
 {
     public interface IPuntoRepositorio : IBaseRepositorio<Punto>
     {

@@ -1,4 +1,4 @@
-﻿using Go.Logica.Interfaces;
+﻿using Go.Logica.RepoInterfaces;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;

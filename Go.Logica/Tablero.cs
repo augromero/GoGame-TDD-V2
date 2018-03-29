@@ -1,5 +1,5 @@
 ﻿using Go.Entidades;
-using Go.Logica.Interfaces;
+using Go.Logica.RepoInterfaces;
 using System;
 using System.Collections.Generic;
 using System.Text;

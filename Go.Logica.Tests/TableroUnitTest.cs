@@ -1,5 +1,5 @@
 ﻿using Go.Entidades;
-using Go.Logica.Interfaces;
+using Go.Logica.RepoInterfaces;
 using Go.Repositorio;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.VisualStudio.TestTools.UnitTesting;

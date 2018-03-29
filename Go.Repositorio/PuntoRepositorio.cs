@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 using Microsoft.EntityFrameworkCore;
 using Go.Entidades;
-using Go.Logica.Interfaces;
+using Go.Logica.RepoInterfaces;
 using System.Threading.Tasks;
 using System.Linq;
 

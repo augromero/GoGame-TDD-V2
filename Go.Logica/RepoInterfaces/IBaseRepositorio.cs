@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Go.Logica.Interfaces
+namespace Go.Logica.RepoInterfaces
 {
     public interface IBaseRepositorio<TEntity> where TEntity : class
     {

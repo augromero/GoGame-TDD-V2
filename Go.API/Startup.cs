@@ -10,7 +10,7 @@ using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
 using Go.Repositorio;
 using Microsoft.EntityFrameworkCore;
-using Go.Logica.Interfaces;
+using Go.Logica.RepoInterfaces;
 using Go.Logica;
 
 namespace Go.API
