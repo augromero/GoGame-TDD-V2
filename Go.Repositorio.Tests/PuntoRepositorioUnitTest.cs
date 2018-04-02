@@ -3,6 +3,7 @@ using Go.Logica;
 using Go.Repositorio;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -26,9 +27,9 @@ namespace Go.Repositorio.Tests
         public async Task Inicializar()
         {
             _puntoLogica = new PuntoLogica(new Coordenada());
-            
+
             var _option = new DbContextOptionsBuilder<CoreContext>()
-                .UseInMemoryDatabase(databaseName: "Punto")
+                .UseInMemoryDatabase(databaseName: Guid.NewGuid().ToString())
                 .Options;
 
             _puntoRepositorio = new PuntoRepositorio(new CoreContext(_option));
@@ -53,7 +54,7 @@ namespace Go.Repositorio.Tests
         [TestMethod]
         public async Task CuandoIngresaDimensionTableroRetornaPuntosTablero()
         {
-            
+
 
             int dimension = 3;
 
@@ -63,18 +64,5 @@ namespace Go.Repositorio.Tests
             Assert.AreEqual(2, puntosRetornados.Count);
         }
 
-        private async Task EliminarPunto(string idPunto)
-        {
-            Task eliminarTask = _puntoRepositorio.EliminarPorIdAsync(idPunto);
-            await eliminarTask;
-        }
-
-        [TestCleanup]
-        public async Task Limpiar()
-        {
-            await EliminarPunto("3A1");
-            await EliminarPunto("3A2");
-            await EliminarPunto("4A1");
-        }
     }
 }
