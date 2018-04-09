@@ -4,7 +4,7 @@ using Go.Logica.RepoInterfaces;
 
 namespace Go.Repositorio
 {
-    public class JugadorRepositorio : BaseRepositorio<Jugador>
+    public class JugadorRepositorio : BaseRepositorio<Jugador>, IJugadorRepositorio
     {
         public JugadorRepositorio(CoreContext contexto) : base(contexto)
         {

@@ -8,6 +8,14 @@
     <PackageReference Include="Microsoft.NET.Test.Sdk" Version="15.7.0" />
     <PackageReference Include="NUnit" Version="3.10.1" />
     <PackageReference Include="NUnit3TestAdapter" Version="3.10.0" />
+    <PackageReference Include="Moq" Version="4.8.2" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.InMemory" Version="2.0.2" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\Tests.Extensiones\Tests.Extensiones.csproj" />
+    <ProjectReference Include="..\Go.Entidades\Go.Entidades.csproj" />
+    <ProjectReference Include="..\Go.Logica\Go.Logica.csproj" />
+    <ProjectReference Include="..\Go.Repositorio\Go.Repositorio.csproj" />
+  </ItemGroup>
 </Project>

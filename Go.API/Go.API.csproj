@@ -13,6 +13,7 @@
     <ProjectReference Include="..\Go.Logica\Go.Logica.csproj" />
     <ProjectReference Include="..\Go.Repositorio\Go.Repositorio.csproj" />
     <PackageReference Include="Microsoft.AspNetCore.All" Version="2.0.6" />
+    <ProjectReference Include="..\Go.InterfacesLogica\Go.InterfacesLogica.csproj" />
   </ItemGroup>
 
   <ItemGroup>

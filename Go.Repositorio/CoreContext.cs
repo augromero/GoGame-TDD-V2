@@ -12,13 +12,21 @@ namespace Go.Repositorio
         { }
 
         public DbSet<Punto> Puntos { get; set; }
+        public DbSet<Jugador> Jugadores { get; set; }
+        public DbSet<Partida> Partidas { get; set; }
+        public DbSet<Movimiento> Movimientos { get; set; }
 
 
-        protected override void OnModelCreating(ModelBuilder builder)
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             //base.OnModelCreating(builder);
 
-            builder.Entity<Punto>().ToTable("Puntos");
+            modelBuilder.Entity<Punto>().ToTable("Puntos");
+            modelBuilder.Entity<Jugador>().ToTable("Jugadores");
+            modelBuilder.Entity<Partida>().ToTable("Partidas");
+            modelBuilder.Entity<Movimiento>().ToTable("Movimientos")
+                        .HasKey(llave => new { llave.PartidaId, llave.OrdenMovimiento });
+            
 
         }
     }

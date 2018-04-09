@@ -18,33 +18,38 @@ namespace Go.Repositorio
             _contexto = contexto;
         }
 
-        public async Task ActualizarAsync(int id, TEntity entidad)
+        public async Task<int> ActualizarAsync(int id, TEntity entidad)
         {
             _contexto.Set<TEntity>().Update(entidad);
             await _contexto.SaveChangesAsync();
+            return 1;
+
         }
 
-        public async Task AgregarAsync(TEntity entidad)
+        public async Task<int> AgregarAsync(TEntity entidad)
         {
             await _contexto.Set<TEntity>().AddAsync(entidad);
             await _contexto.SaveChangesAsync();
+            return 1;
         }
 
-        public async Task AgregarListaAsync(List<TEntity> entidades)
+        public async Task<int> AgregarListaAsync(List<TEntity> entidades)
         {
             foreach (TEntity entidad in entidades)
             {
                 await _contexto.Set<TEntity>().AddAsync(entidad);
             }
             await _contexto.SaveChangesAsync();
+            return entidades.Count;
         }
 
 
-        public async Task EliminarPorIdAsync<TypeId>(TypeId id)
+        public async Task<int> EliminarPorIdAsync<TypeId>(TypeId id)
         {
             var entidad = await ObtenerPorIdAsync(id);
             _contexto.Set<TEntity>().Remove(entidad);
             await _contexto.SaveChangesAsync();
+            return 1;
         }
 
         public IQueryable<TEntity> EncontrarTodos()

@@ -7,6 +7,7 @@
   <ItemGroup>
     <ProjectReference Include="..\Go.Entidades\Go.Entidades.csproj" />
     
+    <ProjectReference Include="..\Go.InterfacesLogica\Go.InterfacesLogica.csproj" />
   </ItemGroup>
 
 </Project>

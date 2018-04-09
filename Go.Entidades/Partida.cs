@@ -14,6 +14,8 @@ namespace Go.Entidades
         [DatabaseGenerated(DatabaseGeneratedOption.Computed)]
         public DateTime FechaInicio { get; set; }
 
+        public int tamañoTablero { get; set; }
+
         public int JugadorBlancoId { get; set; }
 
         public int JugadorNegroId { get; set;  }

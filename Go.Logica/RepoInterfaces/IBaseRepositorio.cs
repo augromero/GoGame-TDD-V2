@@ -12,13 +12,13 @@ namespace Go.Logica.RepoInterfaces
 
         Task<TEntity> ObtenerPorIdAsync<TypeId>(TypeId id);
 
-        Task AgregarAsync(TEntity entidad);
+        Task<int> AgregarAsync(TEntity entidad);
 
-        Task AgregarListaAsync(List<TEntity> entidades);
+        Task<int> AgregarListaAsync(List<TEntity> entidades);
 
-        Task ActualizarAsync(int id, TEntity entidad);
+        Task<int> ActualizarAsync(int id, TEntity entidad);
 
-        Task EliminarPorIdAsync<TypeId>(TypeId id);
+        Task<int> EliminarPorIdAsync<TypeId>(TypeId id);
 
     }
 }

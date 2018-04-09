@@ -36,6 +36,10 @@ namespace Go.API
             services.AddScoped<IPuntoLogica, PuntoLogica>();
             services.AddScoped<ITablero, Tablero>();
             services.AddScoped<ICoordenada, Coordenada>();
+            services.AddScoped<IPartidaRepositorio, PartidaRepositorio>();
+            services.AddScoped<IJugadorRepositorio, JugadorRepositorio>();
+
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
